@@ -31,7 +31,7 @@ const Feed = () => {
           variant="body2"
           sx={{ mt: "2", color: "#fff" }}
         >
-          Copyright &copy; YouVideos.com - 2022
+          Copyright &copy; @harshiilllll - 2022
         </Typography>
       </Box>
 
