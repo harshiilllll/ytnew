@@ -3,8 +3,6 @@ import { Box } from '@mui/material';
 
 import { Navbar, Feed, VideoDetail, ChannelDetail, SearchFeed} from './components';
 
-
-
 import React from 'react'
 
 const App = () => {
