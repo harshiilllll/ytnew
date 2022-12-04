@@ -30,7 +30,7 @@ const VideoCard = ({
         alt={snippet?.title}
         sx={{
           width: { xs: "100vw", sm: "100vw", md: "320px" },
-          height: { xs: '300px', sm: '300px', md: 180, lg: 180 },
+          height: { xs: '280px', sm: '300px', md: 180, lg: 180 },
         }}
       />
     </Link>
