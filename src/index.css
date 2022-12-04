@@ -39,10 +39,16 @@ a {
   width: 100% !important;
 }
 
+.search:hover{
+  border: 1px solid white;
+}
+
 .search-bar{
   border:none;
   outline:none;
   width:350px;
+  background-color: transparent;
+  color: #FFF;
 }
 
 .category-btn{

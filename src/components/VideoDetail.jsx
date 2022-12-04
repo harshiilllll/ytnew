@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
 import  CheckedCircle  from "@mui/icons-material/CheckCircle";
 
-import { Videos } from "./";
+import { Videos, Loader } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const VideoDetail = () => {
@@ -20,7 +20,7 @@ const VideoDetail = () => {
     );
   }, [id]);
 
-  if (!videoDetail?.snippet) return "Loading...";
+  if (!videoDetail?.snippet) return <Loader/>;
 
   const {
     snippet: { title, channelId, channelTitle },
@@ -70,7 +70,7 @@ const VideoDetail = () => {
           </Box>
         </Box>
 
-      <Box px={2} py={{md: 1, xs: 5}} justifyContent="center" alignItems="center">
+      <Box px={{xs: 0, sm: 0, md: 2}} py={{md: 1, xs: 5}} justifyContent="center" alignItems="center">
         <Videos videos={videos} direction="column" />
       </Box>
       </Stack>

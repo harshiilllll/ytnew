@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Box, Typography, Stack } from "@mui/material";
-import { borderRight } from "@mui/system";
+// import { borderRight } from "@mui/system";
 import { Sidebar, Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
@@ -35,7 +35,7 @@ const Feed = () => {
         </Typography>
       </Box>
 
-      <Box p={2} sx={{ overflowY: "scroll", height: "90vh", flex: 2 }}>
+      <Box p={{sm: 0 , md: 0, lg: 2}} sx={{ overflowY: "scroll", height: "90vh", flex: 2 }}>
         <Typography
           variant="h4"
           fontWeight="bold"
@@ -45,7 +45,7 @@ const Feed = () => {
           }}
         >
           {selectedCategory}
-          <span style={{ color: "#FC1503" }}>Videos</span>
+          <span style={{ color: "#FC1503" }}> Videos</span>
         </Typography>
 
         <Videos videos={videos} />

@@ -19,11 +19,14 @@ const handleSearch = (e) => {
 
   return (
    <Paper 
+    className="search"
     component="form"
     onSubmit={handleSearch}
     sx={{
+        background: '#121212',
         borderRadius: '20px',
         boxShadow: 'none',
+        border: '1px solid #3d3d3d',
         pl :'10px',
         mr: { sm:5 }
     }}
