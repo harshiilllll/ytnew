@@ -1,9 +1,63 @@
-import React from 'react'
+import { Box, CardContent, CardMedia, Typography } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { Link } from "react-router-dom";
 
-const ChannelCard = () => {
-  return (
-    <div>ChannelCard</div>
-  )
-}
+import { demoProfilePicture } from "../utils/constants";
 
-export default ChannelCard
+const ChannelCard = ({ channelDetail, marginTop }) => (
+  <Box
+    sx={{
+      boxShadow: "none",
+      borderRadius: "20px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: { xs: "356px", md: "319px" },
+      height: "326px",
+      margin: "auto",
+      marginTop
+    }}
+  >
+    <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+      <CardContent
+        sx={{
+          display: "flex",
+          jusifyContent: "center",
+          flexDirection: "column",
+          textAlign: "center",
+          color: "#FFF",
+        }}
+      >
+        <CardMedia
+          image={
+            channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture
+          }
+          alt={channelDetail?.snippet?.title}
+          sx={{
+            borderRadius: "50%",
+            height: "180px",
+            width: "180px",
+            mb: 2,
+            border: "solid 1px #e3e3e3",
+          }}
+        />
+        <Typography variant="h6">
+          {channelDetail?.snippet?.title}
+          <CheckCircleIcon
+            sx={{ fontSize: "14px", color: "gray", ml: "5px" }}
+          />
+        </Typography>
+        {channelDetail?.statistics?.subscriberCount && (
+          <Typography>
+            {parseInt(
+              channelDetail?.statistics?.subscriberCount
+            ).toLocaleString()}{" "}
+            Subscribers
+          </Typography>
+        )}
+      </CardContent>
+    </Link>
+  </Box>
+);
+
+export default ChannelCard;
