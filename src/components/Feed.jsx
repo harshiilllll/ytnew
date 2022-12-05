@@ -19,7 +19,6 @@ const Feed = () => {
       <Box
         sx={{
           height: { sx: "auto", md: "92vh" },
-          borderRight: "1px solid #3d3d3d",
           px: { sx: 0, md: 2 },
         }}
       >
@@ -27,18 +26,16 @@ const Feed = () => {
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-        <Typography
-          className="copyright"
-          variant="body2"
-          sx={{ mt: "2", color: "#fff" }}
-        >
-          Copyright &copy; @harshiilllll - 2022
-        </Typography>
       </Box>
 
       <Box
-        p={{ sm: 0, md: 0, lg: 2 }}
-        sx={{ overflowY: "scroll", height: "90vh", flex: 2 }}
+        className="feed"
+        sx={{
+          overflowY: "scroll",
+          height: "90vh",
+          flex: 2,
+          paddingLeft: { xs: 0, lg: "70px" },
+        }}
       >
         <Typography
           my={2}

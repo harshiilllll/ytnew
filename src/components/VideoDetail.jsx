@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
-import  CheckedCircle  from "@mui/icons-material/CheckCircle";
+import CheckedCircle from "@mui/icons-material/CheckCircle";
 
 import { Videos, Loader } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
@@ -15,12 +15,12 @@ const VideoDetail = () => {
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`).then((data) =>
       setVideoDetail(data.items[0])
     );
-    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then((data) =>
-      setVideos(data.items)
+    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then(
+      (data) => setVideos(data.items)
     );
   }, [id]);
 
-  if (!videoDetail?.snippet) return <Loader/>;
+  if (!videoDetail?.snippet) return <Loader />;
 
   const {
     snippet: { title, channelId, channelTitle },
@@ -60,10 +60,10 @@ const VideoDetail = () => {
                 </Typography>
               </Link>
               <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant="body1" sx={{opacity: 0.7}}>
+                <Typography variant="body1" sx={{ opacity: 0.7 }}>
                   {viewCount} views
                 </Typography>
-                <Typography variant="body1" sx={{opacity: 0.7}}>
+                <Typography variant="body1" sx={{ opacity: 0.7 }}>
                   {likeCount} likes
                 </Typography>
               </Stack>
@@ -71,9 +71,18 @@ const VideoDetail = () => {
           </Box>
         </Box>
 
-      <Box px={{xs: 0, sm: 0, md: 0, lg: 2}} py={{xs:5 , md: 1}} justifyContent="center" alignItems="center">
-        <Videos videos={videos} direction="column" />
-      </Box>
+        <Box
+          px={{ xs: 0, sm: 0, md: 0, lg: 2 }}
+          py={{ xs: 5, md: 1 }}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Videos
+            videos={videos}
+            direction="column"
+            onClick={window.scrollTo(0, 0)}
+          />
+        </Box>
       </Stack>
     </Box>
   );

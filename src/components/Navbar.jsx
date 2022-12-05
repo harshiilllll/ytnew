@@ -8,13 +8,14 @@ const Navbar = () => (
   <Stack
     direction="row"
     alignItems="center"
-    p={2}
     sx={{
       position: "sticky",
       top: "0",
       backgroundColor: "#000",
       justifyContent: "space-between",
       zIndex: "100",
+      paddingInline: { xs: "12px", md: "16px", lg: "22px" },
+      paddingBlock: { xs: "18px", md: "20px", lg: "28px" },
     }}
   >
     <Link to="/" style={{ alignItems: "center", display: "flex" }}>
