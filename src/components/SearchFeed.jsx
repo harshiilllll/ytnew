@@ -16,18 +16,25 @@ const SerchFeed = () => {
   }, [searchTerm]);
 
   return (
-    <Box sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+    <Box
+      sx={{
+        overflowY: "scroll",
+        height: "90vh",
+        flex: 2,
+        paddingLeft: { xs: 0, lg: "45px" },
+      }}
+    >
       <Typography
         my={2}
         pl={2}
         sx={{
-          color: "black",
+          color: "white",
           paddingLeft: { md: 0 },
           fontSize: "28px",
           fontWeight: "700",
         }}
       >
-        Search Results for:
+        Search Results for :
         <span style={{ color: "#FC1503" }}> {searchTerm}</span>
       </Typography>
 

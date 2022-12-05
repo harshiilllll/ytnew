@@ -3,7 +3,7 @@ import { Stack } from "@mui/material";
 
 import { categories } from "../utils/constants";
 
-const Categories = ({ selectedCategory, setSelectedCategory }) => (
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
     className="sidebar"
     direction="row"
@@ -11,7 +11,7 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => (
       overflowY: "auto",
       height: { sx: "auto", md: "95%" },
       flexDirection: { md: "column" },
-      backgroundColor: "#111",
+      backgroundColor: { xs: "#111", md: "transparent" },
     }}
   >
     {categories.map((category) => (
@@ -46,4 +46,4 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => (
   </Stack>
 );
 
-export default Categories;
+export default Sidebar;

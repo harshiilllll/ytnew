@@ -36,7 +36,7 @@ const VideoCard = ({
       />
     </Link>
     <CardContent
-      sx={{ backgroundColor: "#111", height: { sm: "auto", lg: "80px" } }}
+      sx={{ backgroundColor: "#030303", height: { sm: "auto", lg: "80px" } }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <Typography variant="subtitle1" fontWeight="bold" color="#FFF">

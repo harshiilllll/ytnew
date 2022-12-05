@@ -17,7 +17,7 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
   height: 5px;
 }
 
@@ -29,6 +29,20 @@ a {
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+  height: 5px;
+}
+.sidebar:hover::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.feed::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
 
 .category-btn:hover {
@@ -61,10 +75,6 @@ a {
   color: #fff;
 }
 
-.sidebar::-webkit-scrollbar {
-  display: none;
-}
-
 .category-btn {
   font-weight: bold !important;
   text-transform: capitalize;
@@ -75,9 +85,9 @@ a {
   background: transparent;
   outline: none;
   border: none;
-
+  width: 160px;
   padding: 5px 10px;
-  margin: 10px 0px;
+  margin: 10px 10px;
   border-radius: 20px;
   transition: all 0.3s ease;
 }
@@ -95,12 +105,15 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
   .scroll-horizontal {
     overflow: auto !important;
   }
 
   .react-player {
-    height: 45vh !important;
+    height: 35vh !important;
   }
   .search-bar {
     width: 200px;

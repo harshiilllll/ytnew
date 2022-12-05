@@ -13,7 +13,7 @@ import React from "react";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Box sx={{ backgroundColor: "#000", color: "white" }}>
           <Navbar />
