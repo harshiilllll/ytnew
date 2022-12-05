@@ -16,17 +16,19 @@ const SerchFeed = () => {
   }, [searchTerm]);
 
   return (
-    <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+    <Box sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
       <Typography
-        variant="h4"
-        fontWeight="bold"
-        mb={2}
+        my={2}
+        pl={2}
         sx={{
-          color: "white",
+          color: "black",
+          paddingLeft: { md: 0 },
+          fontSize: "28px",
+          fontWeight: "700",
         }}
       >
         Search Results for:
-        <span style={{ color: "#FC1503" }}>{searchTerm}</span> videos
+        <span style={{ color: "#FC1503" }}> {searchTerm}</span>
       </Typography>
 
       <Videos videos={videos} />

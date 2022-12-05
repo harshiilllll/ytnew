@@ -3,14 +3,15 @@ import { Stack } from "@mui/material";
 
 import { categories } from "../utils/constants";
 
-
 const Categories = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
+    className="sidebar"
     direction="row"
     sx={{
-      overflowY: "scroll",
+      overflowY: "auto",
       height: { sx: "auto", md: "95%" },
       flexDirection: { md: "column" },
+      backgroundColor: "#111",
     }}
   >
     {categories.map((category) => (
@@ -23,10 +24,21 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => (
         }}
         key={category.name}
       >
-        <span style={{ color: category.name === selectedCategory ? "white" : "red", marginRight: "15px" }}>
+        <span
+          style={{
+            color: category.name === selectedCategory ? "white" : "red",
+            marginRight: "10px",
+          }}
+        >
           {category.icon}
         </span>
-        <span style={{ opacity: category.name === selectedCategory ? "1" : "0.8" }}>
+        <span
+          style={{
+            opacity: category.name === selectedCategory ? "1" : "0.8",
+            marginRight: "8px",
+            marginBottom: "2px",
+          }}
+        >
           {category.name}
         </span>
       </button>
