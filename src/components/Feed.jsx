@@ -6,11 +6,12 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
-  const [videos, setvideos] = useState([])
+  const [videos, setvideos] = useState([]);
 
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-    .then((data) => setvideos(data.items))
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+      setvideos(data.items)
+    );
   }, [selectedCategory]);
 
   return (
@@ -35,13 +36,18 @@ const Feed = () => {
         </Typography>
       </Box>
 
-      <Box p={{sm: 0 , md: 0, lg: 2}} sx={{ overflowY: "scroll", height: "90vh", flex: 2 }}>
+      <Box
+        p={{ sm: 0, md: 0, lg: 2 }}
+        sx={{ overflowY: "scroll", height: "90vh", flex: 2 }}
+      >
         <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={2}
+          my={2}
+          pl={2}
           sx={{
             color: "white",
+            paddingLeft: { md: 0 },
+            fontSize: "28px",
+            fontWeight: "700",
           }}
         >
           {selectedCategory}
